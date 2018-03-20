@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configure>
+    <gin>
+        <!--debug/release-->
+        <mode>release</mode>
+        <url>/</url>
+        <port>80</port>
+        <timeout_read_s>5</timeout_read_s>
+        <timeout_write_s>5</timeout_write_s>
+    </gin>
+    <!--日志-->
+    <log>
+        <access>conf/access.xml</access>
+        <file>conf/log.xml</file>
+    </log>
+    <!--es-->
+    <es>
+        <hosts>http://127.0.0.1:9200</hosts>
+    </es>
+    <!--mongo-->
+    <mongo>
+        <hosts>127.0.0.1:27017</hosts>
+        <connect_timeout_s>2</connect_timeout_s>
+        <username/>
+        <passwd/>
+    </mongo>
+    
+    <pic_addr>
+        <prefix></prefix>
+    </pic_addr>
+
+</configure>
