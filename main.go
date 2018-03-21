@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/orange-jacky/gozh/handler"
 	"github.com/orange-jacky/gozh/util"
 	"log"
 	"net/http"
@@ -51,11 +50,8 @@ func main() {
 	g := conf.Gin
 	server := fmt.Sprintf(":%v", g.Port)
 
-	index := fmt.Sprintf("%s", g.Url)
-	router.GET(index, handler.Demo)
-	/*
-		在这里添加gin的路由,需要开发页面的同学添加
-	*/
+	prefix := fmt.Sprintf("%s", g.Url)
+	AllRouter(prefix, router)
 
 	//起一个http服务器
 	s := &http.Server{
