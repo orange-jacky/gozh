@@ -1,54 +1,61 @@
 package util
 
 import (
-	"encoding/xml"
 	"fmt"
 	"log"
 	"os"
 	"sync"
+	"encoding/json"
 )
 
 //Gin
 type Gin struct {
-	Mode            string `xml:"mode"`
-	Url             string `xml:"url"`
-	Port            string `xml:"port"`
-	Timeout_read_s  int    `xml:"timeout_read_s"`
-	Timeout_write_s int    `xml:"timeout_write_s"`
+	Mode            string `json:"mode"`
+	Url             string `json:"url"`
+	Port            string `json:"port"`
+	Timeout_read_s  int    `json:"timeout_read_s,string"`
+	Timeout_write_s int    `json:"timeout_write_s,string"`
 }
 
 // Log 保存日志配置信息
 type Log struct {
-	File   string `xml:"file"`
-	Access string `xml:"access"`
+	File   string `json:"file"`
+	Access string `json:"access"`
 }
 
 //es
 type Es struct {
-	Hosts string `xml:"hosts"`
+	Hosts string `json:"hosts"`
 }
 
 //mongo
 type Mongo struct {
-	Hosts             string `xml:"hosts"`
-	Connect_timeout_s int    `xml:"connect_timeout_s"`
-	Username          string `xml:"username"`
-	Passwd            string `xml:"passwd"`
+	Hosts             string `json:"hosts"`
+	Connect_timeout_s int    `json:"connect_timeout_s,string"`
+	Username          string `json:"username"`
+	Passwd            string `json:"passwd"`
+	DatabaseName      string `json:"database_name"`
 }
 
 //pic_addr
 type Pic_addr struct {
-	Prefix string `xml:"prefix"`
+	Prefix string `json:"prefix"`
+}
+
+//collections' names
+type Collections_names struct {
+	User string `json:"user"`
+	Ariticle string `json:"ariticle"`
 }
 
 //configure
 type configure struct {
-	XMLName  xml.Name `xml:"configure"`
-	Gin      Gin      `xml:"gin"`
-	Log      Log      `xml:"log"`
-	Es       Es       `xml:"es"`
-	Mongo    Mongo    `xml:"mongo"`
-	Pic_addr Pic_addr `xml:"pic_addr"`
+	Gin      Gin      `json:"gin"`
+	Log      Log      `json:"log"`
+	Es       Es       `json:"es"`
+	Mongo    Mongo    `json:"mongo"`
+	Pic_addr Pic_addr `json:"pic_addr"`
+	Collections_names Collections_names `json:"collections_names"`
 }
 
 var (
@@ -56,7 +63,7 @@ var (
 	conf_once sync.Once
 )
 
-//Configure 载入xml配置文件
+//Configure 载入json配置文件
 func Configure(file string) *configure {
 	conf_once.Do(func() {
 		conf = &configure{}
@@ -67,7 +74,7 @@ func Configure(file string) *configure {
 	return conf
 }
 
-//init 载入xml配置文件
+//init 载入json配置文件
 func (c *configure) init(file string) error {
 	fd, err := os.Open(file)
 	if err != nil {
@@ -83,15 +90,23 @@ func (c *configure) init(file string) error {
 		return xml.Unmarshal(content, c)
 	*/
 	//使用decoder处理包含html字符的内容
-	d := xml.NewDecoder(fd)
-	d.Strict = false
-	d.AutoClose = xml.HTMLAutoClose
-	d.Entity = xml.HTMLEntity
-	return d.Decode(c)
+
+	//d := xml.NewDecoder(fd)
+	//d.Strict = false
+	//d.AutoClose = xml.HTMLAutoClose
+	//d.Entity = xml.HTMLEntity
+
+	b := make([]byte, 1000)
+	n, err := fd.Read(b)
+	if n == 0 {
+		fmt.Print("配置文件中未找到相应数据")
+	}
+	return json.Unmarshal(b[:n], c)
 }
 
 func (c *configure) String() string {
-	return fmt.Sprintf("%#v", c)
+	js,_ := json.MarshalIndent(c, "", "\t")
+	return fmt.Sprintf("%s", js)
 }
 
 //得到配置实例

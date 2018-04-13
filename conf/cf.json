@@ -1,0 +1,29 @@
+{
+  "gin": {
+    "mode": "release",
+    "url": "/",
+    "port": 80,
+    "timeout_read_s": 5,
+    "timeout_write_s": 5
+  },
+  "log": {
+    "access": "conf/access.xml",
+    "file": "conf/log.xml"
+  },
+  "es": {
+    "hosts": "http://127.0.0.1:9200"
+  },
+  "mongo": {
+    "hosts": "127.0.0.1:27017",
+    "connect_timeout_s": "2",
+    "username": "",
+    "passwd": ""
+  },
+  "pic_addr": {
+    "prefix": ""
+  },
+  "collections_names": {
+    "user": "user",
+    "ariticle": "ariticle"
+  }
+}
