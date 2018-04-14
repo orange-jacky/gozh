@@ -1,1 +1,1 @@
-nohup ./gozh_server conf/cf.xml >stdout_`date +%Y%m%d-%H:%M:%d`.log 2>&1 &
+nohup ./gozh_server conf/cf.json >stdout_`date +%Y%m%d-%H:%M:%d`.log 2>&1 &

@@ -24,8 +24,8 @@ type Stoper interface {
 var all []Stoper
 
 func Usage(program string) {
-	fmt.Printf("\nusage: %s conf/cf.xml\n", program)
-	fmt.Printf("\nconf/cf.xml      configure file\n")
+	fmt.Printf("\nusage: %s conf/cf.json\n", program)
+	fmt.Printf("\nconf/cf.json      configure file\n")
 }
 
 func main() {
