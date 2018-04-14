@@ -30,10 +30,50 @@
       <div class="content-body">
         <mu-row class="body-content" gutter>
           <mu-col width="100" tablet="100" desktop="100">
-            <mu-sub-header>阳光</mu-sub-header>
+            <div id="notify">
+              <span>未设置登录密码，请前往 <a href="">修改密码</a> 页面进行设置。设置后将可以在移动设备上使用邮箱登录网站。</span>
+            </div>
           </mu-col>
           <mu-col width="100" tablet="70" desktop="70">
             <mu-paper class="article"  :zDepth="2" >
+              <!--标签bar 开始-->
+              <div>
+                <mu-tabs :value="activeTabA" @change="handleTabChangeA" class="bar">
+                  <mu-tab  class="title-bar" value="t1" title="活跃"/>
+                  <mu-tab  class="title-bar" value="t2" title="精华"/>
+                  <mu-tab class="title-bar" value="t3" title="最新"/>
+                  <mu-tab class="title-bar" value="t4" title="最热"/>
+                  <mu-tab class="title-bar" value="t4" title="零回复"/>
+                </mu-tabs>
+              </div>
+              <!--标签bar 结束-->
+
+              <!--文章列表 开始-->
+              <div class="article-list">
+                <mu-list-item title="">
+                  <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+                  <span class="btn btn-green">分享</span>
+                  <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+                  <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+                </mu-list-item>
+              </div>
+              <div class="article-list">
+                <mu-list-item title="">
+                  <span class="btn">分享</span>
+                  <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+                  <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+                  <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+                </mu-list-item>
+              </div>
+              <div class="article-list">
+                <mu-list-item title="">
+                  <span class="btn btn-best">分享</span>
+                  <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+                  <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+                  <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+                </mu-list-item>
+              </div>
+              <!--文章列表 结束-->
               <mu-card-header title="Myron Avatar" subTitle="sub title">
                 <mu-avatar src="http://www.muse-ui.org/images/uicon.jpg" slot="avatar"/>
               </mu-card-header>
@@ -100,6 +140,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      activeTabA: 't1',
       activeTab: 'tab1',
       activeTabR: 'tab4',
       activeList: 'list1'
@@ -108,6 +149,9 @@ export default {
   methods: {
     handleTabChange (val) {
       this.activeTab = val
+    },
+    handleTabChangeA (val) {
+      this.activeTabA = val
     },
     handleTabChangeR (val) {
       this.activeTabR = val
@@ -187,5 +231,40 @@ export default {
   .footer{
     padding: 20px 0;
     text-align: center;
+  }
+  .title-bar{
+    background-color: white;
+    color: #ccc;
+  }
+  .bar{
+    width: 350px;
+  }
+  #notify{
+    color: #AA7B3E;
+    background: #FBF8E4;
+    line-height: 40px;
+    width: 90%;
+  }
+  #notify span{
+    margin-left: 35px;
+  }
+  .article-list{
+    margin-top: 5px;
+    border-bottom: 1px solid #cccccc;
+  }
+  .btn{
+    background: #ccc;
+    padding: 5px;
+    color: white;
+    font-size: 10px;
+  }
+  .btn-green{
+    background: #7BB75F;
+  }
+  .btn-default{
+    background: #7BB75F;
+  }
+  .btn-best{
+    background: #DB6661;
   }
 </style>
