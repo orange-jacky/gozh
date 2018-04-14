@@ -19,36 +19,42 @@
       </mu-appbar>
         <!--导航-->
     <div class="content">
+
+      <!--面包屑导航-->
       <div class="breadcrumb">
-        <!--面包屑导航-->
         <mu-breadcrumb>
           <mu-breadcrumb-item href="/">Home</mu-breadcrumb-item>
           <mu-breadcrumb-item href="/">VideoGame</mu-breadcrumb-item>
           <mu-breadcrumb-item>Download</mu-breadcrumb-item>
         </mu-breadcrumb>
       </div>
-      <div class="content-body">
-        <mu-row class="body-content" gutter>
-          <mu-col width="100" tablet="100" desktop="100">
-            <div id="notify">
-              <span>未设置登录密码，请前往 <a href="">修改密码</a> 页面进行设置。设置后将可以在移动设备上使用邮箱登录网站。</span>
-            </div>
-          </mu-col>
-          <mu-col width="100" tablet="70" desktop="70">
-            <mu-paper class="article"  :zDepth="2" >
-              <!--标签bar 开始-->
-              <div>
-                <mu-tabs :value="activeTabA" @change="handleTabChangeA" class="bar">
-                  <mu-tab  class="title-bar" value="t1" title="活跃"/>
-                  <mu-tab  class="title-bar" value="t2" title="精华"/>
-                  <mu-tab class="title-bar" value="t3" title="最新"/>
-                  <mu-tab class="title-bar" value="t4" title="最热"/>
-                  <mu-tab class="title-bar" value="t4" title="零回复"/>
-                </mu-tabs>
-              </div>
-              <!--标签bar 结束-->
+      <!--面包屑导航-->
 
-              <!--文章列表 开始-->
+      <mu-row class="body-content" gutter>
+        <!--notify start-->
+        <mu-col width="100" tablet="100" desktop="100">
+          <mu-chip class="notify"  @delete="handleClose" showDelete>
+            <span>未设置登录密码，请前往 <a href="">修改密码</a> 页面进行设置。设置后将可以在移动设备上使用邮箱登录网站。</span>
+          </mu-chip>
+        </mu-col>
+        <!--notify end-->
+        <!--content start-->
+        <mu-col width="100" tablet="70" desktop="70">
+          <mu-paper class="article"  :zDepth="2" >
+            <mu-card>
+            <!--标签bar 开始-->
+            <div>
+              <mu-tabs :value="activeTabA" @change="handleTabChangeA" class="bar">
+                <mu-tab  class="title-bar" value="t1" title="活跃"/>
+                <mu-tab  class="title-bar" value="t2" title="精华"/>
+                <mu-tab class="title-bar" value="t3" title="最新"/>
+                <mu-tab class="title-bar" value="t4" title="最热"/>
+                <mu-tab class="title-bar" value="t4" title="零回复"/>
+              </mu-tabs>
+            </div>
+            <!--标签bar 结束-->
+
+            <!--文章列表 开始-->
               <div class="article-list">
                 <mu-list-item title="">
                   <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
@@ -73,61 +79,67 @@
                   <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
                 </mu-list-item>
               </div>
-              <!--文章列表 结束-->
-              <mu-card-header title="Myron Avatar" subTitle="sub title">
-                <mu-avatar src="http://www.muse-ui.org/images/uicon.jpg" slot="avatar"/>
-              </mu-card-header>
-              <mu-card-title title="Content Title" subTitle="Content Title"/>
+            <!--文章列表 结束-->
+              <!--分页开始-->
+              <div class="pagination">
+                <mu-pagination :total="total" :current="current" @pageChange="handleClick">
+                </mu-pagination>
+              </div>
+              <!--分页结束-->
+              <!--网站提示-->
               <mu-card-text>
-                散落在指尖的阳光，我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影。调皮的阳光掀动了四月的心帘，温暖如约的歌声渐起。似乎在诉说着，我也可以在漆黑的角落里，找到阴影背后的阳光，找到阳光与阴影奏出和谐的旋律。我要用一颗敏感赤诚的心迎接每一缕滑过指尖的阳光！
-              </mu-card-text>
-            </mu-paper>
-          </mu-col>
-          <mu-col width="100" tablet="30" desktop="30">
-            <div class="demo-menu-container">
-              <mu-paper class="demo-menu" :zDepth="2" >
+              <div class="notice">
+                <span>GOZH是一个开源的社区，社区的建设都是技术类免费贡献自己的时间去设计和开发的，我们致力于打造一个活跃度高的，能真正解决问题的，高质量的Golang中文社区。这里需要你的加入为社区贡献你的一份力量。</span>
+              </div>
+            </mu-card-text>
+              <!--网站提示-->
+            </mu-card>
+          </mu-paper>
+        </mu-col>
+        <mu-col width="100" tablet="30" desktop="30">
+          <div class="demo-menu-container">
+            <mu-paper class="demo-menu" :zDepth="2" >
 
-                <div class="right-content">
-                  <mu-raised-button class="right-button" label="发起讨论" icon="record_voice_over" Default/>
-                  <mu-raised-button class="right-button" label="发布文章" icon="edit" Default/>
-                  <mu-raised-button class="right-button" label="提个问题" icon="help"  Default/>
-                  <mu-raised-button class="right-button" label="分享此站" icon="share" Default/>
+              <div class="right-content">
+                <mu-raised-button class="right-button" label="发起讨论" icon="record_voice_over" Default/>
+                <mu-raised-button class="right-button" label="发布文章" icon="edit" Default/>
+                <mu-raised-button class="right-button" label="提个问题" icon="help"  Default/>
+                <mu-raised-button class="right-button" label="分享此站" icon="share" Default/>
+              </div>
+            </mu-paper>
+          </div>
+          <div class="demo-menu-container">
+            <mu-paper class="demo-menu" :zDepth="2" >
+              <div class="right-title">
+                <span>讨论列表</span>
+              </div>
+              <div class="right-content">
+                <mu-tabs :value="activeTabR" @change="handleTabChangeR">
+                  <mu-tab value="tab4" title="最新"/>
+                  <mu-tab value="tab5" title="最热"/>
+                  <mu-tab value="tab6"  title="更多"/>
+                </mu-tabs>
+                <div class="right-list">
+                  <mu-list-item title="" disabled>
+                    <mu-avatar  slot="left" src="http://www.muse-ui.org/images/uicon.jpg" :size="30"/>
+                    <a href=""><p>我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影...</p></a>
+                    <span class="right-icon">5小时前 </span>
+                    <span class="right-icon"><mu-icon value="favorite" :size="18"/>2</span>
+                    <span class="right-icon"><mu-icon value="insert_comment" :size="18"/>23</span>
+                  </mu-list-item>
+                  <mu-list-item title="" disabled>
+                    <mu-avatar  slot="left" src="http://www.muse-ui.org/images/uicon.jpg" :size="30"/>
+                    <a href=""><p>我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影...</p></a>
+                    <span class="right-icon">5小时前 </span>
+                    <span class="right-icon"><mu-icon value="favorite" :size="18"/>2</span>
+                    <span class="right-icon"><mu-icon value="insert_comment" :size="18"/>23</span>
+                  </mu-list-item>
                 </div>
-              </mu-paper>
-            </div>
-            <div class="demo-menu-container">
-              <mu-paper class="demo-menu" :zDepth="2" >
-                <div class="right-title">
-                  <span>讨论列表</span>
-                </div>
-                <div class="right-content">
-                  <mu-tabs :value="activeTabR" @change="handleTabChangeR">
-                    <mu-tab value="tab4" title="最新"/>
-                    <mu-tab value="tab5" title="最热"/>
-                    <mu-tab value="tab6"  title="更多"/>
-                  </mu-tabs>
-                  <div class="right-list">
-                    <mu-list-item title="" disabled>
-                      <mu-avatar  slot="left" src="http://www.muse-ui.org/images/uicon.jpg" :size="30"/>
-                      <a href=""><p>我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影...</p></a>
-                      <span class="right-icon">5小时前 </span>
-                      <span class="right-icon"><mu-icon value="favorite" :size="18"/>2</span>
-                      <span class="right-icon"><mu-icon value="insert_comment" :size="18"/>23</span>
-                    </mu-list-item>
-                    <mu-list-item title="" disabled>
-                      <mu-avatar  slot="left" src="http://www.muse-ui.org/images/uicon.jpg" :size="30"/>
-                      <a href=""><p>我试着轻轻抓住光影的踪迹，它却在眉宇间投下一片淡淡的阴影...</p></a>
-                      <span class="right-icon">5小时前 </span>
-                      <span class="right-icon"><mu-icon value="favorite" :size="18"/>2</span>
-                      <span class="right-icon"><mu-icon value="insert_comment" :size="18"/>23</span>
-                    </mu-list-item>
-                  </div>
-                </div>
-              </mu-paper>
-            </div>
-          </mu-col>
-        </mu-row>
-      </div>
+              </div>
+            </mu-paper>
+          </div>
+        </mu-col>
+      </mu-row>
     </div>
     <div class="footer">
       Muse-UI ©2017 Created by Muse-UI
@@ -143,7 +155,8 @@ export default {
       activeTabA: 't1',
       activeTab: 'tab1',
       activeTabR: 'tab4',
-      activeList: 'list1'
+      total: 40,
+      current: 1,
     }
   },
   methods: {
@@ -156,9 +169,6 @@ export default {
     handleTabChangeR (val) {
       this.activeTabR = val
     },
-    handleListChange (val) {
-      this.activeList = val
-    }
   }
 }
 </script>
@@ -166,11 +176,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .body-content {
-    margin-left: 28px;
-  }
-  .content-body{
-    min-height: 500px;
-    border-radius: 5px;
+    margin-left: 10px;
   }
   .right-title{
     text-align: center;
@@ -233,20 +239,12 @@ export default {
     text-align: center;
   }
   .title-bar{
+    font-size: 12px;
     background-color: white;
     color: #ccc;
   }
   .bar{
     width: 350px;
-  }
-  #notify{
-    color: #AA7B3E;
-    background: #FBF8E4;
-    line-height: 40px;
-    width: 90%;
-  }
-  #notify span{
-    margin-left: 35px;
   }
   .article-list{
     margin-top: 5px;
@@ -261,10 +259,18 @@ export default {
   .btn-green{
     background: #7BB75F;
   }
-  .btn-default{
-    background: #7BB75F;
-  }
   .btn-best{
     background: #DB6661;
+  }
+  .notice{
+    font-size: 12px;
+    color: #8B6C3E;
+    background: #FBF8E4;
+  }
+  .notice span{
+    line-height: 28px;
+  }
+  .pagination{
+    margin-top: 15px;
   }
 </style>
