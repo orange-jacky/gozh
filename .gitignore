@@ -17,3 +17,6 @@
 *.graffle
 gozh
 sftp-config.json
+.idea/inspectionProfiles/
+.idea/
+
