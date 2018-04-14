@@ -5,7 +5,6 @@
           <mu-tab value="tab1" title="技术分享"/>
           <mu-tab value="tab2" title="技术翻译"/>
           <mu-tab value="tab3" title="综合文章"/>
-
         </mu-tabs>
         <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
         <mu-flat-button color="white" label="搜索" slot="right"/>
@@ -39,7 +38,7 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
-          <article-list></article-list>
+         <router-view></router-view>
           <right-sidebar></right-sidebar>
       </mu-row>
     </div>

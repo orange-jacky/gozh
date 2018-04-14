@@ -38,6 +38,46 @@
             <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
           </mu-list-item>
         </div>
+        <div class="article-list">
+          <mu-list-item title="">
+            <span class="btn btn-best">分享</span>
+            <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+            <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+            <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+          </mu-list-item>
+        </div>
+        <div class="article-list">
+          <mu-list-item title="">
+            <span class="btn btn-best">分享</span>
+            <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+            <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+            <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+          </mu-list-item>
+        </div>
+        <div class="article-list">
+          <mu-list-item title="">
+            <span class="btn btn-best">分享</span>
+            <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+            <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+            <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+          </mu-list-item>
+        </div>
+        <div class="article-list">
+          <mu-list-item title="">
+            <span class="btn btn-best">分享</span>
+            <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+            <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+            <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+          </mu-list-item>
+        </div>
+        <div class="article-list">
+          <mu-list-item title="">
+            <span class="btn btn-best">分享</span>
+            <mu-avatar src="http://www.muse-ui.org/images/avatar1.jpg" slot="leftAvatar"/>
+            <span>散落在指尖的阳光，我试着轻轻抓住光影的踪迹</span>
+            <span class="right-icon" slot="right"> 20/10/15k 5小时前</span>
+          </mu-list-item>
+        </div>
         <!--文章列表 结束-->
         <!--分页开始-->
         <div class="pagination">
@@ -112,7 +152,6 @@
   }
 
   .article{
-    display: inline-block;
     margin: 16px 32px 16px 0;
   }
   .right-icon {

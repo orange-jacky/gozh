@@ -66,9 +66,10 @@
             <span>推荐招聘</span>
           </div>
           <div class="right-detail">
-            <p>[北京][20K][中国航空]招聘2年以上go语言工程师</p>
-            <p>[北京][20K][中国航空]招聘2年以上go语言工程师</p>
-            <p>[北京][20K][中国航空]招聘2年以上go语言工程师</p>
+            <p><a href="">[北京][20K][中国航空]招聘2年以上go语言工程师</a></p>
+            <p><a href="">[北京][20K][中国航空]招聘2年以上go语言工程师</a></p>
+            <p><a href="">[北京][20K][中国航空]招聘2年以上go语言工程师</a></p>
+            <p><a href="">[北京][20K][中国航空]招聘2年以上go语言工程师</a></p>
           </div>
         </div>
       </mu-paper>
@@ -127,6 +128,12 @@
     color: #737373;
     margin: 10px 0 20px 0;
     padding: 10px 0 20px 0;
+  }
+  .right-detail a:hover{
+    color: #DB6862;
+  }
+  .right-detail a{
+    color: #737373;
   }
   .right-title span {
     color: #cccccc;
