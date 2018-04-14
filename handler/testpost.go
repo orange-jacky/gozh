@@ -6,8 +6,6 @@ import (
 )
 
 func Testpost(c *gin.Context) {
-	view := "view/testpost.html" //选用哪个视图模板
-
 	type D struct {
 		Ip, User, Passwd string
 	}
@@ -16,5 +14,5 @@ func Testpost(c *gin.Context) {
 	d.User = c.PostForm("username")
 	d.Passwd = c.PostForm("password")
 
-	c.HTML(http.StatusOK, view, d)
+	c.String(http.StatusOK, "%v", d)
 }
