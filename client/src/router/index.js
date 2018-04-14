@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import List from '@/components/ArticleList'
 import Show from '@/components/Show'
+import Login from  '@/components/Login'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
           path: '/list/:user/:article_flag',
           name: 'article',
           component: Show
+        },
+        {
+          path: '/login',
+          name: 'login',
+          component: Login
         }
       ]
     }
