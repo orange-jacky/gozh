@@ -1,21 +1,6 @@
 <template>
   <div class="layout">
-    <mu-appbar title="Title">
-      <mu-tabs :value="activeTab" @change="handleTabChange" class="tab">
-        <mu-tab value="tab1" title="技术分享"/>
-        <mu-tab value="tab2" title="技术翻译"/>
-        <mu-tab value="tab3" title="综合文章"/>
-      </mu-tabs>
-      <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
-      <mu-flat-button color="white" label="搜索" slot="right"/>
-      <mu-icon-menu icon="more_vert" slot="right">
-        <mu-menu-item title="菜单 1"/>
-        <mu-menu-item title="菜单 2"/>
-        <mu-menu-item title="菜单 3"/>
-        <mu-menu-item title="菜单 4"/>
-        <mu-menu-item title="菜单 5"/>
-      </mu-icon-menu>
-    </mu-appbar>
+    <nav-bar></nav-bar>
     <!--导航-->
     <div class="content">
 
@@ -38,7 +23,7 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
-        <left-sidebar :is_edit="false"></left-sidebar>
+        <left-sidebar :is_edit="true"></left-sidebar>
         <router-view></router-view>
       </mu-row>
     </div>
@@ -49,11 +34,13 @@
 </template>
 
 <script>
+  import NavBar from '../Navber'
   import LeftSidebar from './LeftSidebar'
   export default {
     name: 'index',
     components: {
-      LeftSidebar
+      LeftSidebar,
+      NavBar
     },
     data () {
       return {
