@@ -2,7 +2,7 @@
   <mu-col width="100" tablet="30" desktop="30">
     <div class="demo-menu-container">
       <!--个人简介-->
-      <mu-paper v-if="isArticle" class="demo-menu" :zDepth="2" >
+      <mu-paper v-if="is_article" class="demo-menu" :zDepth="2" >
         <div class="right-content">
           <div class="right-title">
           <span>作者：Acorns</span>
@@ -15,7 +15,7 @@
           <div class="profile"><span>A Life-long learner.</span></div>
           <div class="profile">
             <mu-chip class="demo-chip">
-              <mu-icon value="location_on" :color="white" :size="18"/>北京
+              <mu-icon value="location_on" :size="18"/>北京
             </mu-chip>
           </div>
           <div class="profile">
@@ -80,10 +80,10 @@
 <script>
     export default {
       name: "right-sidebar",
+      props:['is_article'],
       data () {
           return {
             activeTabR: 'tab4',
-            isArticle: true
           }
       },
       methods: {

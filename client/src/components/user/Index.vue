@@ -1,22 +1,22 @@
 <template>
   <div class="layout">
-      <mu-appbar title="Title">
-        <mu-tabs :value="activeTab" @change="handleTabChange" class="tab">
-          <mu-tab value="tab1" title="技术分享"/>
-          <mu-tab value="tab2" title="技术翻译"/>
-          <mu-tab value="tab3" title="综合文章"/>
-        </mu-tabs>
-        <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
-        <mu-flat-button color="white" label="搜索" slot="right"/>
-        <mu-icon-menu icon="more_vert" slot="right">
-          <mu-menu-item title="菜单 1"/>
-          <mu-menu-item title="菜单 2"/>
-          <mu-menu-item title="菜单 3"/>
-          <mu-menu-item title="菜单 4"/>
-          <mu-menu-item title="菜单 5"/>
-        </mu-icon-menu>
-      </mu-appbar>
-        <!--导航-->
+    <mu-appbar title="Title">
+      <mu-tabs :value="activeTab" @change="handleTabChange" class="tab">
+        <mu-tab value="tab1" title="技术分享"/>
+        <mu-tab value="tab2" title="技术翻译"/>
+        <mu-tab value="tab3" title="综合文章"/>
+      </mu-tabs>
+      <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
+      <mu-flat-button color="white" label="搜索" slot="right"/>
+      <mu-icon-menu icon="more_vert" slot="right">
+        <mu-menu-item title="菜单 1"/>
+        <mu-menu-item title="菜单 2"/>
+        <mu-menu-item title="菜单 3"/>
+        <mu-menu-item title="菜单 4"/>
+        <mu-menu-item title="菜单 5"/>
+      </mu-icon-menu>
+    </mu-appbar>
+    <!--导航-->
     <div class="content">
 
       <!--面包屑导航-->
@@ -38,8 +38,8 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
-         <router-view></router-view>
-          <right-sidebar :is_article="true"></right-sidebar>
+        <router-view></router-view>
+        <right-sidebar :is_article="true"></right-sidebar>
       </mu-row>
     </div>
     <div class="footer">
@@ -49,30 +49,28 @@
 </template>
 
 <script>
-  import ArticleList from './ArticleList'
-  import RightSidebar from './RightSidebar'
-export default {
-  name: 'home',
-  components: {
-    ArticleList,
-    RightSidebar
-  },
-  data () {
-    return {
-      activeTabA: 't1',
-      activeTab: 'tab1',
-      activeTabR: 'tab4',
-    }
-  },
-  methods: {
-    handleTabChange (val) {
-      this.activeTab = val
+  import RightSidebar from '../RightSidebar'
+  export default {
+    name: 'index',
+    components: {
+      RightSidebar
     },
-    handleClose () {
+    data () {
+      return {
+        activeTabA: 't1',
+        activeTab: 'tab1',
+        activeTabR: 'tab4',
+      }
+    },
+    methods: {
+      handleTabChange (val) {
+        this.activeTab = val
+      },
+      handleClose (){
 
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

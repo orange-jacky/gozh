@@ -110,6 +110,9 @@
         handleTabChangeA (val) {
           this.activeTabA = val
         },
+        handleClick () {
+
+        }
       }
     }
 </script>

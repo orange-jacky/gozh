@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import List from '@/components/ArticleList'
 import Show from '@/components/Show'
 import Login from  '@/components/Login'
+import UserCenter from  '@/components/user/Index'
 
 Vue.use(Router)
 
@@ -25,7 +26,27 @@ export default new Router({
           name: 'article',
           component: Show
         },
-
+      ]
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: UserCenter,
+      children:[
+        {
+          path: 'profile/:user_id',
+          name: 'user_profile',
+          meta: {
+            requiredAuth: true
+          }
+        },
+        {
+          path: 'my_article/user_id',
+          name: 'user_article',
+          meta: {
+            requiredAuth: true
+          }
+        }
       ]
     },
     {
