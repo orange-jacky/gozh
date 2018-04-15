@@ -1,10 +1,25 @@
 <template>
   <mu-col width="100" tablet="30" desktop="30">
-    <div class="demo-menu-container">
+    <div v-if="is_edit" class="demo-menu-container">
+      <mu-paper class="demo-menu" :zDepth="2" >
+        <div class="modify_profile">
+          <mu-raised-button class="demo-raised-button" backgroundColor="#DB6862" label="个人资料" icon="view_list" fullWidth default/>
+        </div>
+        <div class="modify_profile">
+          <mu-raised-button class="demo-raised-button" label="修稿头像" icon="account_circle" fullWidth default/>
+        </div>
+        <div class="modify_profile">
+          <mu-raised-button class="demo-raised-button" label="消息通知" icon="notifications" fullWidth default/>
+        </div>
+        <div class="modify_profile">
+          <mu-raised-button class="demo-raised-button" label="修改密码" icon="lock_outline" fullWidth default/>
+        </div>
+      </mu-paper>
+    </div>
+    <div v-if="!is_edit" class="demo-menu-container">
       <!--个人简介-->
       <mu-paper class="demo-menu" :zDepth="2" >
         <div class="">
-
           <mu-row gutter>
             <mu-col width="100" tablet="60" desktop="60">
               <div class="profile-avatar">
@@ -79,10 +94,15 @@
 
 <script>
     import MuRow from "muse-ui/src/grid/row";
+    import MuIcon from "muse-ui/src/icon/icon";
 
     export default {
-      components: {MuRow},
-      name: "left-sidebar"
+      components: {
+        MuIcon,
+        MuRow},
+      name: "left-sidebar",
+      props: ['is_edit'],
+      activeColor: '#DB6862'
     }
 </script>
 
@@ -161,4 +181,15 @@
     font-size: 20px;
     text-align: center;
   }
+  .modify_profile{
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .modify_profile span:hover {
+    color: #DB6862;
+  }
+
 </style>

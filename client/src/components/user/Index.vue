@@ -38,7 +38,7 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
-        <left-sidebar></left-sidebar>
+        <left-sidebar :is_edit="false"></left-sidebar>
         <router-view></router-view>
       </mu-row>
     </div>

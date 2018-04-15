@@ -5,6 +5,7 @@ import List from '@/components/ArticleList'
 import Show from '@/components/Show'
 import Login from  '@/components/Login'
 import UserCenter from  '@/components/user/Index'
+import MyPublish from  '@/components/user/MyPublish'
 
 Vue.use(Router)
 
@@ -30,9 +31,16 @@ export default new Router({
     },
     {
       path: '/user',
-      name: 'user',
       component: UserCenter,
       children:[
+        {
+          path: '/user/:user_id',
+          name: 'user',
+          component: MyPublish,
+          meta: {
+            requiredAuth: true
+          }
+        },
         {
           path: 'profile/:user_id',
           name: 'user_profile',
