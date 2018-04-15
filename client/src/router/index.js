@@ -25,12 +25,13 @@ export default new Router({
           name: 'article',
           component: Show
         },
-        {
-          path: '/login',
-          name: 'login',
-          component: Login
-        }
+
       ]
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
