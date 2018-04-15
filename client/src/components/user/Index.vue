@@ -38,8 +38,8 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
+        <left-sidebar></left-sidebar>
         <router-view></router-view>
-        <right-sidebar :is_article="true"></right-sidebar>
       </mu-row>
     </div>
     <div class="footer">
@@ -49,11 +49,11 @@
 </template>
 
 <script>
-  import RightSidebar from '../RightSidebar'
+  import LeftSidebar from './LeftSidebar'
   export default {
     name: 'index',
     components: {
-      RightSidebar
+      LeftSidebar
     },
     data () {
       return {
