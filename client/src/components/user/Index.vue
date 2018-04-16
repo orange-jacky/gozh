@@ -29,7 +29,7 @@
     </div>
     <div class="footer">
       <my-footer></my-footer>
-      Muse-UI ©2017 Created by Muse-UI
+      Gozh ©2018 Created by Muse-UI VueJS
     </div>
   </div>
 </template>

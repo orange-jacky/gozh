@@ -28,7 +28,8 @@
       </mu-row>
     </div>
     <div class="footer">
-      Muse-UI ©2017 Created by Muse-UI
+      <my-footer></my-footer>
+      Gozh ©2018 Created by Muse-UI VueJS
     </div>
   </div>
 </template>
@@ -37,12 +38,14 @@
   import NavBar from './Navber'
   import ArticleList from './ArticleList'
   import RightSidebar from './RightSidebar'
+  import MyFooter from './Footer'
 export default {
   name: 'home',
   components: {
     ArticleList,
     RightSidebar,
-    NavBar
+    NavBar,
+    MyFooter
   },
   data () {
     return {
