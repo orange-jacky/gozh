@@ -40,16 +40,17 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
   import NavBar from './Navber'
+  import Footer from './Footer'
 
   export default {
     name: "Login",
     components: {
-      NavBar
+      NavBar,
+      Footer
     },
     data() {
       return {}
@@ -80,8 +81,6 @@
     }else{
       document.getElementById("login-bg").style.height = height + "px";
     }
-
-
   };
 </script>
 
