@@ -7,6 +7,7 @@ import Login from  '@/components/Login'
 import UserCenter from  '@/components/user/Index'
 import MyPublish from  '@/components/user/MyPublish'
 import Profile from  '@/components/user/Profile'
+import WritePost from '@/components/WritePost'
 
 Vue.use(Router)
 
@@ -56,13 +57,18 @@ export default new Router({
           meta: {
             requiredAuth: true
           }
-        }
+        },
       ]
     },
     {
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/write_post',
+      name: 'write_post',
+      component: WritePost,
     }
   ]
 })

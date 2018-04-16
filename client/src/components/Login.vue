@@ -26,75 +26,76 @@
       </div>
       <!--第三方登录按钮-->
       <div class="sign-in-with-other-botton">
-        <div class="sign-in-with-other-icon">
-          <mu-icon-button href="#">
-            <font-awesome-icon :icon="['fab', 'github-alt']"/>
-          </mu-icon-button>
-          <mu-icon-button href="#">
-            <font-awesome-icon :icon="['fab', 'weixin']" />
-          </mu-icon-button>
-          <mu-icon-button href="#">
-            <font-awesome-icon :icon="['fab', 'qq']" />
-          </mu-icon-button>
-        </div>
+        <mu-icon-button href="#">
+          <font-awesome-icon :icon="['fab', 'github-alt']"/>
+        </mu-icon-button>
+        <mu-icon-button href="#">
+          <font-awesome-icon :icon="['fab', 'weixin']"/>
+        </mu-icon-button>
+        <mu-icon-button href="#">
+          <font-awesome-icon :icon="['fab', 'qq']"/>
+        </mu-icon-button>
       </div>
     </div>
+    <footer_></footer_>
   </div>
+
 </template>
 
 <script>
   import NavBar from './Navber'
-  import Footer from './Footer'
+  import Footer_ from './Footer'
 
   export default {
     name: "Login",
     components: {
       NavBar,
-      Footer
+      Footer_
     },
     data() {
       return {}
     }
   }
 
-  window.onload = function(){
+  window.onload = function () {
     // noinspection UnnecessaryLocalVariableJS
     var height = parseInt(window.innerHeight);
     // noinspection JSValidateTypes
     var panelHeight = parseInt(document.getElementById("login").clientHeight) + 162;
     // noinspection JSValidateTypes
-    if(panelHeight > height){
+    if (panelHeight > height) {
       document.getElementById("login-bg").style.height = panelHeight + 50 + "px";
-    }else{
+    } else {
       document.getElementById("login-bg").style.height = height + "px";
     }
   };
   // noinspection SpellCheckingInspection
-  window.onresize = function(){
+  window.onresize = function () {
     // noinspection UnnecessaryLocalVariableJS
     var height = parseInt(window.innerHeight);
 
     var panelHeight = parseInt(document.getElementById("login").clientHeight) + 162;
     // noinspection JSValidateTypes
-    if(panelHeight > height){
+    if (panelHeight > height) {
       document.getElementById("login-bg").style.height = panelHeight + 50 + "px";
-    }else{
+    } else {
       document.getElementById("login-bg").style.height = height + "px";
     }
   };
 </script>
 
 <style scoped>
-  body{
+  body {
     background-color: #e8e8e8;
   }
+
   .login-bg {
     background-color: #e8e8e8;
     min-height: 100%;
   }
 
   .login {
-    width:400px;
+    width: 400px;
     margin: 100px auto 0;
     background-color: white;
     border-radius: 10px;
@@ -105,8 +106,8 @@
     margin: auto 0px;
     font-size: 200%;
     text-align: center;
-    height:57px;
-    padding-top:15px;
+    height: 57px;
+    padding-top: 15px;
   }
 
   .input {
@@ -136,8 +137,8 @@
     vertical-align: middle;
   }
 
-  .sign-in-with-other-icon {
-    width: 200px;
-    margin: 0px auto;
+  .sign-in-with-other-botton {
+    width: 154px;
+    margin: 0 auto;
   }
 </style>
