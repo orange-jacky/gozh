@@ -124,7 +124,7 @@
     color: #ccc;
   }
   .bar{
-    width: 350px;
+    max-width: 350px;
   }
   .article-list{
     margin-top: 5px;

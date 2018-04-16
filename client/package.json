@@ -10,7 +10,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.10",
+    "@fortawesome/fontawesome-free-regular": "^5.0.10",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/vue-fontawesome": "0.0.22",
     "ajv": "^6.4.0",
+    "axios": "^0.18.0",
     "keycode": "^2.2.0",
     "muse-ui": "^2.1.0",
     "vue": "^2.5.2",

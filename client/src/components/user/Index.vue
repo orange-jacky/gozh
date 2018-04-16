@@ -69,6 +69,9 @@
   .layout{
     background-color: rgb(236, 236, 236);
   }
+  .content{
+    max-width: 1300px;
+  }
   .tab{
     margin: 0 auto;
     width: 300px;

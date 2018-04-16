@@ -6,6 +6,7 @@ import Show from '@/components/Show'
 import Login from  '@/components/Login'
 import UserCenter from  '@/components/user/Index'
 import MyPublish from  '@/components/user/MyPublish'
+import Profile from  '@/components/user/Profile'
 
 Vue.use(Router)
 
@@ -44,6 +45,7 @@ export default new Router({
         {
           path: 'profile/:user_id',
           name: 'user_profile',
+          component: Profile,
           meta: {
             requiredAuth: true
           }

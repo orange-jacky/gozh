@@ -72,6 +72,7 @@ export default {
   .content{
     width: 90%;
     margin: 0 auto;
+    max-width: 1300px;
   }
   .breadcrumb{
     margin: 10px 0;
