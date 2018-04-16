@@ -27,7 +27,15 @@
       <!--第三方登录按钮-->
       <div class="sign-in-with-other-botton">
         <div class="sign-in-with-other-icon">
-          <mu-icon value="home"/>
+          <mu-icon-button href="#">
+            <font-awesome-icon :icon="['fab', 'github-alt']"/>
+          </mu-icon-button>
+          <mu-icon-button href="#">
+            <font-awesome-icon :icon="['fab', 'weixin']" />
+          </mu-icon-button>
+          <mu-icon-button href="#">
+            <font-awesome-icon :icon="['fab', 'qq']" />
+          </mu-icon-button>
         </div>
       </div>
     </div>
@@ -60,7 +68,7 @@
     height: 40%;
     margin: 100px auto 0;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   .login-title {
@@ -84,19 +92,20 @@
     line-height: 60px;
     text-align: center;
   }
+
   .sign-in-with-other .line {
     display: inline-block;
     width: 150px;
-    border-top: 1px solid #ccc ;
+    border-top: 1px solid #ccc;
   }
+
   .sign-in-with-other .txt {
     color: #686868;
     vertical-align: middle;
   }
 
-  .sign-in-with-other-botton {
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
+  .sign-in-with-other-icon {
+    width: 200px;
+    margin: 0px auto;
   }
 </style>
