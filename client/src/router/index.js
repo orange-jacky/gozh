@@ -8,6 +8,7 @@ import UserCenter from  '@/components/user/Index'
 import MyPublish from  '@/components/user/MyPublish'
 import Profile from  '@/components/user/Profile'
 import ModifyAvatar from  '@/components/user/ModifyAvatar'
+import WritePost from  '@/components/WritePost'
 
 Vue.use(Router)
 
@@ -72,6 +73,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {// 发帖
+      path: '/write_post',
+      name: 'write_post',
+      component: WritePost
     }
   ]
 })
