@@ -1,5 +1,5 @@
 <template>
-  <mu-row gutter class="footer-bac">
+  <mu-row gutter class="footer-bac" id="footer-bac">
     <mu-col width="100" tablet="25" desktop="25">
       <div class="footer">
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  GOZH是一个开源的社区，社区的建设都是技术类免费贡献自己的时间去设计和开发的，我们致力于打造一个活跃度高的，能真正解决问题的，高质量的Golang中文社区。这里需要你的加入为社区贡献你的一份力量。</p>
