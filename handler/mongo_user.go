@@ -2,12 +2,12 @@ package handler
 
 import (
 	"fmt"
-	"sync"
-	"log"
 	"github.com/globalsign/mgo/bson"
-	. "github.com/orange-jacky/gozh/db"
 	. "github.com/orange-jacky/gozh/data"
-
+	. "github.com/orange-jacky/gozh/db"
+	. "github.com/orange-jacky/gozh/util"
+	"log"
+	"sync"
 )
 
 type mongoUser struct {
