@@ -28,19 +28,22 @@
       </mu-row>
     </div>
     <div class="footer">
+      <my-footer></my-footer>
       Muse-UI ©2017 Created by Muse-UI
     </div>
   </div>
 </template>
 
 <script>
+  import MyFooter from '../Footer'
   import NavBar from '../Navber'
   import LeftSidebar from './LeftSidebar'
   export default {
     name: 'index',
     components: {
       LeftSidebar,
-      NavBar
+      NavBar,
+      MyFooter
     },
     data () {
       return {
