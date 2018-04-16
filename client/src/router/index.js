@@ -7,7 +7,7 @@ import Login from  '@/components/Login'
 import UserCenter from  '@/components/user/Index'
 import MyPublish from  '@/components/user/MyPublish'
 import Profile from  '@/components/user/Profile'
-import WritePost from '@/components/WritePost'
+import ModifyAvatar from  '@/components/user/ModifyAvatar'
 
 Vue.use(Router)
 
@@ -19,23 +19,23 @@ export default new Router({
       component: Index,
       redirect: 'list',
       children: [
-        {
+        { //默认首页
           path: "/list",
           name: 'index',
           component: List
         },
-        {
+        { // 文章详情
           path: '/list/:user/:article_flag',
           name: 'article',
           component: Show
         },
       ]
     },
-    {
+    { // 用户中心
       path: '/user',
       component: UserCenter,
       children:[
-        {
+        { // 默认用户中心页面
           path: '/user/:user_id',
           name: 'user',
           component: MyPublish,
@@ -43,7 +43,7 @@ export default new Router({
             requiredAuth: true
           }
         },
-        {
+        { // 用户修改个人资料
           path: 'profile/:user_id',
           name: 'user_profile',
           component: Profile,
@@ -51,24 +51,27 @@ export default new Router({
             requiredAuth: true
           }
         },
-        {
+        { // 用户修改头像
+          path: 'edit_avatar/:user_id',
+          name: 'user_profile',
+          component: ModifyAvatar,
+          meta: {
+            requiredAuth: true
+          }
+        },
+        { // 我的文章
           path: 'my_article/user_id',
           name: 'user_article',
           meta: {
             requiredAuth: true
           }
-        },
+        }
       ]
     },
-    {
+    { // 登录
       path: '/login',
       name: 'login',
       component: Login
-    },
-    {
-      path: '/write_post',
-      name: 'write_post',
-      component: WritePost,
     }
   ]
 })
