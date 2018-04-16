@@ -1,7 +1,7 @@
 <template>
-  <div class="login-bg">
+  <div class="login-bg" id="login-bg">
     <nav-bar></nav-bar>
-    <div class="login">
+    <div class="login" id="login">
       <!--头部登录标识-->
       <div class="login-title">
         登录
@@ -40,41 +40,73 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
   import NavBar from './Navber'
+  import Footer from './Footer'
 
   export default {
     name: "Login",
     components: {
-      NavBar
+      NavBar,
+      Footer
     },
     data() {
       return {}
     }
   }
+
+  window.onload = function(){
+    // noinspection UnnecessaryLocalVariableJS
+    var height = parseInt(window.innerHeight);
+    // noinspection JSValidateTypes
+    var panelHeight = parseInt(document.getElementById("login").clientHeight) + 162;
+    // noinspection JSValidateTypes
+    if(panelHeight > height){
+      document.getElementById("login-bg").style.height = panelHeight + 50 + "px";
+    }else{
+      document.getElementById("login-bg").style.height = height + "px";
+    }
+  };
+  // noinspection SpellCheckingInspection
+  window.onresize = function(){
+    // noinspection UnnecessaryLocalVariableJS
+    var height = parseInt(window.innerHeight);
+
+    var panelHeight = parseInt(document.getElementById("login").clientHeight) + 162;
+    // noinspection JSValidateTypes
+    if(panelHeight > height){
+      document.getElementById("login-bg").style.height = panelHeight + 50 + "px";
+    }else{
+      document.getElementById("login-bg").style.height = height + "px";
+    }
+  };
 </script>
 
 <style scoped>
+  body{
+    background-color: #e8e8e8;
+  }
   .login-bg {
     background-color: #e8e8e8;
-    height: 1000px;
+    min-height: 100%;
   }
 
   .login {
-    width: 30%;
-    height: 40%;
+    width:400px;
     margin: 100px auto 0;
     background-color: white;
     border-radius: 10px;
   }
 
   .login-title {
-    border: 2px solid black;
-    margin: auto 0;
-    font-size: 140%;
+    /*border: 2px solid black;*/
+    margin: auto 0px;
+    font-size: 200%;
+    text-align: center;
+    height:57px;
+    padding-top:15px;
   }
 
   .input {
