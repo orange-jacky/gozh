@@ -11,6 +11,8 @@ import ModifyAvatar from  '@/components/user/ModifyAvatar'
 import Join from '@/components/Join'
 import ChangePassword from '@/components/user/ChangePassword'
 import Create from '@/components/user/Create'
+import Courser from '@/components/Courses'
+
 Vue.use(Router)
 
 export default new Router({
@@ -96,6 +98,12 @@ export default new Router({
       path: '/join',
       name: 'join',
       component: Join
+    },
+
+    {// 教程页面
+      path: '/courses',
+      name: 'courses',
+      component: Courser
     }
   ]
 })
