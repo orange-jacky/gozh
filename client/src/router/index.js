@@ -9,6 +9,7 @@ import MyPublish from  '@/components/user/MyPublish'
 import Profile from  '@/components/user/Profile'
 import ModifyAvatar from  '@/components/user/ModifyAvatar'
 import WritePost from  '@/components/WritePost'
+import Join from '@/components/Join'
 
 Vue.use(Router)
 
@@ -78,6 +79,11 @@ export default new Router({
       path: '/write_post',
       name: 'write_post',
       component: WritePost
+    },
+    {// 注册
+      path: '/join',
+      name: 'join',
+      component: Join
     }
   ]
 })
