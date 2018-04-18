@@ -6,7 +6,7 @@
           <mu-raised-button class="demo-raised-button" backgroundColor="#DB6862" label="个人资料" icon="view_list" fullWidth default/>
         </div>
         <div class="modify_profile">
-          <mu-raised-button class="demo-raised-button" label="修稿头像" icon="account_circle" fullWidth default/>
+          <mu-raised-button class="demo-raised-button" label="修改头像" icon="account_circle" fullWidth default/>
         </div>
         <div class="modify_profile">
           <mu-raised-button class="demo-raised-button" label="消息通知" icon="notifications" fullWidth default/>

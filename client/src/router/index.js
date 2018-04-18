@@ -10,7 +10,7 @@ import Profile from  '@/components/user/Profile'
 import ModifyAvatar from  '@/components/user/ModifyAvatar'
 import WritePost from  '@/components/WritePost'
 import Join from '@/components/Join'
-
+import ChangePassword from '@/components/user/ChangePassword'
 Vue.use(Router)
 
 export default new Router({
@@ -53,6 +53,14 @@ export default new Router({
             requiredAuth: true
           }
         },
+        { // 用户修改个人资料
+          path: 'change_password/:user_id',
+          name: 'change_password',
+          component: ChangePassword,
+          meta: {
+            requiredAuth: true
+          }
+        },
         { // 用户修改头像
           path: 'edit_avatar/:user_id',
           name: 'user_profile',
@@ -62,7 +70,7 @@ export default new Router({
           }
         },
         { // 我的文章
-          path: 'my_article/user_id',
+          path: 'my_article/:user_id',
           name: 'user_article',
           meta: {
             requiredAuth: true
