@@ -1,1 +1,0 @@
-mv gozh gozh_server

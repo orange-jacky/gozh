@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  nginx:
+    # replace username/repo:tag with your name and image details
+    image: blade2iron/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./nginx/conf:/nginx/conf"
+      - "./nginx/logs:/nginx/logs"
+      - "./nginx/html:/nginx/html"
+    networks:
+      - gozhnet
+  mongo:
+    image: mongo:3.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - "./mongo/db:/data/db"
+      - "./mongo/configdb/:/data/configdb"
+      - "./mongo/log:/var/log/mongodb"
+    networks:
+      - gozhnet
+
+networks:
+  gozhnet:
