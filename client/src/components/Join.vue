@@ -13,28 +13,28 @@
           <mu-text-field type="text" hint-text="昵称"
                          name="nick_name" icon="account_circle"/>
           <br/>
-          <mu-text-field type="email" full-width="true" hint-text="请输入邮箱地址" icon="email" name="email"/>
+          <mu-text-field type="email" hint-text="请输入邮箱地址" icon="email" name="email"/>
           <br/>
-          <mu-text-field type="password" full-width="true" hint-text="请输入密码" icon="remove_red_eye"
+          <mu-text-field type="password" hint-text="请输入密码" icon="remove_red_eye"
                          name="password"/>
           <br/>
-          <mu-text-field type="password" full-width="true" hint-text="请再次输入密码" icon="remove_red_eye"
+          <mu-text-field type="password" hint-text="请再次输入密码" icon="remove_red_eye"
                          name="second_password"/>
           <br/>
           <mu-text-field type="text" hint-text="请输入验证码"
-                         name="validate" max-length="4" icon="keyboard"/>
+                         name="validate" icon="keyboard"/>
           <img src="http://120.79.195.26/validate_code" height="30px" width="60px"/>
           <br/>
 
           <mu-text-field type="text" hint-text="请输入邮箱验证码"
-                         name="validate" max-length="4" icon="keyboard"/>
+                         name="validate" icon="keyboard"/>
           <mu-flat-button label="获取邮箱验证码" class="demo-flat-button"/>
           <br/>
 
 
           <!--按钮-->
-          <div style="width:200px; margin:0px auto;">
-            <mu-raised-button class="login-button" full-width="true" label="注册"/>
+          <div style="width: 88px;margin:0px auto;">
+            <mu-raised-button class="login-button" label="注册"/>
           </div>
         </div>
       </div>
