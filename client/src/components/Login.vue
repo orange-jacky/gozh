@@ -38,8 +38,9 @@
           </mu-icon-button>
         </div>
       </div>
+      <my-footer></my-footer>
     </div>
-    <my-footer></my-footer>
+
   </div>
 </template>
 
@@ -91,7 +92,7 @@
 
   .login-form {
     width: 400px;
-    margin: 100px auto 0;
+    margin: 100px auto 5%;
     background-color: white;
     border-radius: 10px;
   }
