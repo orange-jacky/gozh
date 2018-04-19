@@ -20,3 +20,5 @@ golang 中文活跃社区
 	docker-compose build
 	再重启服务
 	docker-compose up 
+
+
