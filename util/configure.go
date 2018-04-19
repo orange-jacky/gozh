@@ -1,20 +1,20 @@
 package util
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
 	"sync"
-	"encoding/json"
 )
 
 //Gin
 type Gin struct {
 	Mode            string `json:"mode"`
 	Url             string `json:"url"`
-	Port            string `json:"port"`
-	Timeout_read_s  int    `json:"timeout_read_s,string"`
-	Timeout_write_s int    `json:"timeout_write_s,string"`
+	Port            int    `json:"port"`
+	Timeout_read_s  int    `json:"timeout_read_s"`
+	Timeout_write_s int    `json:"timeout_write_s"`
 }
 
 // Log 保存日志配置信息
@@ -31,7 +31,7 @@ type Es struct {
 //mongo
 type Mongo struct {
 	Hosts             string `json:"hosts"`
-	Connect_timeout_s int    `json:"connect_timeout_s,string"`
+	Connect_timeout_s int    `json:"connect_timeout_s"`
 	Username          string `json:"username"`
 	Passwd            string `json:"passwd"`
 	DatabaseName      string `json:"database_name"`
@@ -44,17 +44,17 @@ type Pic_addr struct {
 
 //collections' names
 type Collections_names struct {
-	User string `json:"user"`
+	User     string `json:"user"`
 	Ariticle string `json:"ariticle"`
 }
 
 //configure
 type configure struct {
-	Gin      Gin      `json:"gin"`
-	Log      Log      `json:"log"`
-	Es       Es       `json:"es"`
-	Mongo    Mongo    `json:"mongo"`
-	Pic_addr Pic_addr `json:"pic_addr"`
+	Gin               Gin               `json:"gin"`
+	Log               Log               `json:"log"`
+	Es                Es                `json:"es"`
+	Mongo             Mongo             `json:"mongo"`
+	Pic_addr          Pic_addr          `json:"pic_addr"`
 	Collections_names Collections_names `json:"collections_names"`
 }
 
@@ -105,7 +105,7 @@ func (c *configure) init(file string) error {
 }
 
 func (c *configure) String() string {
-	js,_ := json.MarshalIndent(c, "", "\t")
+	js, _ := json.MarshalIndent(c, "", "\t")
 	return fmt.Sprintf("%s", js)
 }
 

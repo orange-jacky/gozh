@@ -43,8 +43,8 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.New()
 	router.Use(util.Logger())
-	router.Static("/static", "./static") //载入js,css,img等静态资源
-	router.LoadHTMLGlob("view/*.html")   //载入html模板
+	//router.Static("/static", "./static") //载入js,css,img等静态资源
+	//router.LoadHTMLGlob("view/*.html")   //载入html模板
 
 	conf := util.GetConfigure()
 	g := conf.Gin

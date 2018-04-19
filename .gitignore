@@ -17,8 +17,10 @@
 *.graffle
 gozh
 .idea/
+.DS_Store
 
 
 nginx/logs
 mongo/db
 mongo/log
+logs/

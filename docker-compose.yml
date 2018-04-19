@@ -23,6 +23,17 @@ services:
       - "./mongo/log:/var/log/mongodb"
     networks:
       - gozhnet
-
+                  
+  myapp:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - "./logs:/myapp/logs"
+    networks:
+      - gozhnet
+    depends_on:
+      - mongo
+      - nginx
 networks:
   gozhnet:

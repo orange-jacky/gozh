@@ -1,0 +1,16 @@
+.git
+doc
+client/node_modules
+
+nginx/logs
+mongo/db
+mongo/log
+logs
+
+
+*.md
+LICENSE
+docker-compose.yml
+.DS_Store
+.dockerignore
+Dockerfile
