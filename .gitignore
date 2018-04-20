@@ -15,11 +15,10 @@
 
 *.txt
 *.graffle
-gozh
+./gozh
 .idea/
 .DS_Store
 std*.log
-
 
 nginx/logs
 mongo/db
