@@ -14,5 +14,5 @@ docker-compose.yml
 .DS_Store
 .dockerignore
 Dockerfile
-gozh
+./gozh
 std*.log
