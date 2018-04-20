@@ -1,14 +1,15 @@
-FROM golang:1.10 AS build
+FROM golang:1.10-alpine3.7 AS build
 
-
-
+# Install tools required to build the project
+# We need to run `docker build --no-cache .` to update those dependencies
+RUN apk add --no-cache git  && \
+    go get -u github.com/tools/godep
 
 RUN mkdir /myapp
 WORKDIR /myapp
-
 COPY . /myapp
 
-RUN go build -o gozh .
+ENV APP_NAME gozh
+RUN	go build -ldflags '-d -w -s' -o $APP_NAME . 
 
-RUN  chmod +x /myapp/start.sh
-CMD  /myapp/start.sh  gozh
+CMD  ./$APP_NAME conf/cf.json  > stdout.log 2>&1
