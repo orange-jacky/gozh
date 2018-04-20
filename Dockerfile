@@ -12,6 +12,8 @@ ENV APP_DIR $GOPATH/src/$APP_NAME
 WORKDIR $APP_DIR
 COPY .  $APP_DIR
 
+EXPOSE 80
+
 RUN godep go build -o $APP_NAME . 
 
-CMD  ./$APP_NAME conf/cf.json  >> logs/stdout_`date +%Y%m%d-%H:%M:%d`.log 2>&1
+CMD  ./$APP_NAME conf/cf.json >> logs/stdout_`date +%Y%m%d-%H:%M:%d`.log 2>&1
