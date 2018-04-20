@@ -1,1 +1,1 @@
-./gozh conf/cf.json  > stdout.log 2>&1 
+./$1 conf/cf.json  > stdout.log 2>&1 
