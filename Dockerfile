@@ -9,7 +9,8 @@ RUN mkdir /myapp
 WORKDIR /myapp
 COPY . /myapp
 
+
 ENV APP_NAME gozh
-RUN	go build -ldflags '-d -w -s' -o $APP_NAME . 
+RUN godep go build -ldflags '-d -w -s' -o $APP_NAME . 
 
 CMD  ./$APP_NAME conf/cf.json  > stdout.log 2>&1
