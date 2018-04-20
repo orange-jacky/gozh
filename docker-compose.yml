@@ -30,7 +30,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "./logs:/myapp/logs"
+      - "./logs:/go/src/gozh/logs"
     networks:
       - gozhnet
     depends_on:

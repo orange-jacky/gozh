@@ -1,0 +1,141 @@
+{
+	"ImportPath": "gozh",
+	"GoVersion": "go1.10",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/cihub/seelog",
+			"Comment": "v2.6-26-g7bfb793",
+			"Rev": "7bfb7937d106522a9c6d659864dca47cddcccc8a"
+		},
+		{
+			"ImportPath": "github.com/cihub/seelog/archive",
+			"Comment": "v2.6-26-g7bfb793",
+			"Rev": "7bfb7937d106522a9c6d659864dca47cddcccc8a"
+		},
+		{
+			"ImportPath": "github.com/cihub/seelog/archive/gzip",
+			"Comment": "v2.6-26-g7bfb793",
+			"Rev": "7bfb7937d106522a9c6d659864dca47cddcccc8a"
+		},
+		{
+			"ImportPath": "github.com/cihub/seelog/archive/tar",
+			"Comment": "v2.6-26-g7bfb793",
+			"Rev": "7bfb7937d106522a9c6d659864dca47cddcccc8a"
+		},
+		{
+			"ImportPath": "github.com/cihub/seelog/archive/zip",
+			"Comment": "v2.6-26-g7bfb793",
+			"Rev": "7bfb7937d106522a9c6d659864dca47cddcccc8a"
+		},
+		{
+			"ImportPath": "github.com/gin-contrib/sse",
+			"Rev": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin",
+			"Comment": "v1.2-146-g5d3f30c",
+			"Rev": "5d3f30cfc81f9109850fa9043a19783cbbde68a5"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/binding",
+			"Comment": "v1.2-146-g5d3f30c",
+			"Rev": "5d3f30cfc81f9109850fa9043a19783cbbde68a5"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/json",
+			"Comment": "v1.2-146-g5d3f30c",
+			"Rev": "5d3f30cfc81f9109850fa9043a19783cbbde68a5"
+		},
+		{
+			"ImportPath": "github.com/gin-gonic/gin/render",
+			"Comment": "v1.2-146-g5d3f30c",
+			"Rev": "5d3f30cfc81f9109850fa9043a19783cbbde68a5"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo",
+			"Comment": "r2018.02.20",
+			"Rev": "baa28fcb8e7d5dfab92026c0920cb6c9ae72faa2"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/bson",
+			"Comment": "r2018.02.20",
+			"Rev": "baa28fcb8e7d5dfab92026c0920cb6c9ae72faa2"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/json",
+			"Comment": "r2018.02.20",
+			"Rev": "baa28fcb8e7d5dfab92026c0920cb6c9ae72faa2"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/sasl",
+			"Comment": "r2018.02.20",
+			"Rev": "baa28fcb8e7d5dfab92026c0920cb6c9ae72faa2"
+		},
+		{
+			"ImportPath": "github.com/globalsign/mgo/internal/scram",
+			"Comment": "r2018.02.20",
+			"Rev": "baa28fcb8e7d5dfab92026c0920cb6c9ae72faa2"
+		},
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Comment": "v1.0.0-1-gbbd03ef",
+			"Rev": "bbd03ef6da3a115852eaf24c8a1c46aeb39aa175"
+		},
+		{
+			"ImportPath": "github.com/json-iterator/go",
+			"Comment": "1.1.3-13-gf88871b",
+			"Rev": "f88871b601a2c5579f7311d7903e0934375284dc"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-isatty",
+			"Comment": "v0.0.3-7-g6ca4dbf",
+			"Rev": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c"
+		},
+		{
+			"ImportPath": "github.com/modern-go/concurrent",
+			"Comment": "1.0.3",
+			"Rev": "bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94"
+		},
+		{
+			"ImportPath": "github.com/modern-go/reflect2",
+			"Comment": "1.0.0-9-g05fbef0",
+			"Rev": "05fbef0ca5da472bbf96c9322b84a53edc03c9fd"
+		},
+		{
+			"ImportPath": "github.com/orange-jacky/gozh/data",
+			"Rev": "410231e3e13e14bb8406bd265bbb4e7742520567"
+		},
+		{
+			"ImportPath": "github.com/orange-jacky/gozh/db",
+			"Rev": "410231e3e13e14bb8406bd265bbb4e7742520567"
+		},
+		{
+			"ImportPath": "github.com/orange-jacky/gozh/handler",
+			"Rev": "410231e3e13e14bb8406bd265bbb4e7742520567"
+		},
+		{
+			"ImportPath": "github.com/orange-jacky/gozh/util",
+			"Rev": "410231e3e13e14bb8406bd265bbb4e7742520567"
+		},
+		{
+			"ImportPath": "github.com/ugorji/go/codec",
+			"Comment": "v1.1-16-g02537d3",
+			"Rev": "02537d3a3e32ef636a53519265d211bd208ca488"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "83801418e1b59fb1880e363299581ee543af32ca"
+		},
+		{
+			"ImportPath": "gopkg.in/go-playground/validator.v8",
+			"Comment": "v8.18.2",
+			"Rev": "5f1438d3fca68893a817e4a66806cea46a9e4ebf"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Comment": "v2.1.1",
+			"Rev": "7f97868eec74b32b0982dd158a51a446d1da7eb5"
+		}
+	]
+}
