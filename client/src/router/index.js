@@ -11,7 +11,8 @@ import ModifyAvatar from  '@/components/user/ModifyAvatar'
 import Join from '@/components/Join'
 import ChangePassword from '@/components/user/ChangePassword'
 import Create from '@/components/user/Create'
-import Courser from '@/components/Courses'
+import Courses from '@/components/Courses'
+import CourseContents from '@/components/CourseContents'
 
 Vue.use(Router)
 
@@ -103,7 +104,14 @@ export default new Router({
     {// 教程页面
       path: '/courses',
       name: 'courses',
-      component: Courser
-    }
+      component: Courses,
+      children: [
+        {// 教程目录
+          path: '/courses/:course_id',
+          name: 'course_contents',
+          component: CourseContents
+        }
+      ]
+    },
   ]
 })
