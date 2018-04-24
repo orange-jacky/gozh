@@ -13,6 +13,7 @@ import ChangePassword from '@/components/user/ChangePassword'
 import Create from '@/components/user/Create'
 import Courses from '@/components/Courses'
 import CourseContents from '@/components/CourseContents'
+import Documents from '@/components/Documents'
 
 Vue.use(Router)
 
@@ -111,5 +112,10 @@ export default new Router({
       name: 'course_contents',
       component: CourseContents
     },
+    {// 文档页面
+      path: '/documents',
+      name: 'documents',
+      component: Documents
+    }
   ]
 })
