@@ -104,14 +104,12 @@ export default new Router({
     {// 教程页面
       path: '/courses',
       name: 'courses',
-      component: Courses,
-      children: [
-        {// 教程目录
-          path: '/courses/:course_id',
-          name: 'course_contents',
-          component: CourseContents
-        }
-      ]
+      component: Courses
+    },
+    {// 教程目录
+      path: '/courses/:course_id',
+      name: 'course_contents',
+      component: CourseContents
     },
   ]
 })

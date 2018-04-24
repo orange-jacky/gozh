@@ -6,12 +6,12 @@
       <br/>
       <div class="courses-items">
         <div class="courses-item" v-for="item in items">
-          <a class="image" href="https://laravel-china.org/courses/laravel-essential-training-5.5">
+          <a class="image" v-bind:href="item.src">
             <img class="image" v-bind:src="item.image">
           </a>
           <div class="content" id="content">
             <div class="header">
-              <a href="https://laravel-china.org/courses/laravel-essential-training-5.5">
+              <a v-bind:href="item.src">
                 {{item.header}}
               </a>
             </div>
@@ -43,6 +43,7 @@
           {
             image: "https://www.baidu.com",
             header: "Laravel 教程 - Web 开发实战入门 ( Laravel 5.5 )",
+            src:"http://www.baidu.com",
             description: "本书将教你如何使用 Laravel 一步一步构建一个类似新浪微博的应用，让你从实际开发中体会到 Laravel 开发的敏捷、愉悦与轻松。<br>" +
             "通过阅读本教程，你将学到如 HTML、CSS、JavaScript、PHP 和 Laravel 等 Web 开发相关的基础知识。本书还会对这些基础知识点进行延伸扩展，为你讲解一些在 Web" +
             "开发中更为专业、实用的技能，如 Git 工作流、Gulp 前端工作流、Bootstrap" +
@@ -51,6 +52,7 @@
           {
             image: "https://fsdhub.com/uploads/images/201704/28/1/O2sXyZ5ZH6.jpg?imageView2/1/w/200/h/200",
             header: "Laravel 教程 - Web 开发实战入门 ( Laravel 5 )",
+            src:"http://www.baidu.com",
             description: "本书将教你如何使用 Laravel 一步一步构建一个类似新浪微博的应用，让你从实际开发中体会到 Laravel 开发的敏捷、愉悦与轻松。<br>" +
             "通过阅读本教程，你将学到如 HTML、CSS、JavaScript、PHP 和 Laravel 等 Web 开发相关的基础知识。本书还会对这些基础知识点进行延伸扩展，为你讲解一些在 Web" +
             "开发中更为专业、实用的技能，如 Git 工作流、Gulp 前端工作流、Bootstrap" +
@@ -59,6 +61,7 @@
           {
             image: "https://fsdhub.com/uploads/images/201704/28/1/O2sXyZ5ZH6.jpg?imageView2/1/w/200/h/200",
             header: "Laravel 教程 - Web 开发实战入门 ( Laravel 5.7 )",
+            src:"http://www.baidu.com",
             description: "本书将教你如何使用 Laravel 一步一步构建一个类似新浪微博的应用，让你从实际开发中体会到 Laravel 开发的敏捷、愉悦与轻松。<br>" +
             "通过阅读本教程，你将学到如 HTML、CSS、JavaScript、PHP 和 Laravel 等 Web 开发相关的基础知识。本书还会对这些基础知识点进行延伸扩展，为你讲解一些在 Web" +
             "开发中更为专业、实用的技能，如 Git 工作流、Gulp 前端工作流、Bootstrap" +
