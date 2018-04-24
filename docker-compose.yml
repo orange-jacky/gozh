@@ -38,3 +38,4 @@ services:
       - nginx
 networks:
   gozhnet:
+    driver: bridge
