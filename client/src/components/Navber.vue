@@ -1,6 +1,6 @@
 <template>
   <mu-appbar title="Title">
-    <mu-tabs :value="activeTab" @change="handleTabChange" class="tab">
+    <mu-tabs :value="activeTab" class="tab">
       <mu-tab value="tab1" title="技术分享" href="/"/>
       <mu-tab value="tab2" title="技术翻译"href="/documents" />
       <mu-tab value="tab3" title="综合文章" href="#"/>
