@@ -27,9 +27,15 @@
       <!--功能区域-->
       <mu-paper class="demo-menu" :zDepth="2" >
         <div class="right-content">
+<<<<<<< Updated upstream
           <mu-raised-button class="right-button" label="发起讨论" icon="record_voice_over" Default/>
           <mu-raised-button class="right-button" label="发布文章" to="/create" tag="button" icon="edit" Default/>
           <mu-raised-button class="right-button" label="提个问题" icon="help"  Default/>
+=======
+          <mu-raised-button @click="publish" class="right-button" label="发起讨论" icon="record_voice_over" Default/>
+          <mu-raised-button @click="publish" class="right-button" label="发布文章" icon="edit" Default/>
+          <mu-raised-button @click="publish" class="right-button" label="提个问题" icon="help"  Default/>
+>>>>>>> Stashed changes
           <mu-raised-button class="right-button" label="分享此站" icon="share" Default/>
         </div>
       </mu-paper>
@@ -90,6 +96,9 @@
         handleTabChangeR (val) {
           this.activeTabR = val
         },
+        publish () {
+          this.$router.push('/create')
+        }
       }
     }
 </script>

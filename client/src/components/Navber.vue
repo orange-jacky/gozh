@@ -9,11 +9,9 @@
     <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
     <mu-flat-button color="white" label="搜索" slot="right"/>
     <mu-icon-menu icon="more_vert" slot="right">
-      <mu-menu-item title="菜单 1"/>
-      <mu-menu-item title="菜单 2"/>
-      <mu-menu-item title="菜单 3"/>
-      <mu-menu-item title="菜单 4"/>
-      <mu-menu-item title="菜单 5"/>
+      <mu-menu-item @click="userCenter" title="个人中心"/>
+      <mu-menu-item @click="publish" title="发布文章"/>
+      <mu-menu-item @click="publish" title="提个问题"/>
     </mu-icon-menu>
   </mu-appbar>
 </template>
@@ -24,15 +22,23 @@
     props: ['activeTab'],
     data() {
       return {
-        activeTab: 'tab1',
+        // activeTab: 'tab1',
       }
     },
     methods: {
-      handleTabChange (val) {
+      handleTabChange(val) {
         this.activeTab = val
       },
-    },
+
+      userCenter() {
+        this.$router.push('/user/sad')
+      },
+      publish() {
+        this.$router.push('create')
+      }
+    }
   }
+
 </script>
 
 <style scoped>

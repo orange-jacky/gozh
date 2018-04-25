@@ -23,13 +23,13 @@
         </mu-col>
         <!--notify end-->
         <!--content start-->
-        <left-sidebar :is_edit="true"></left-sidebar>
+        <left-sidebar :is_edit="isEdit"></left-sidebar>
         <router-view></router-view>
       </mu-row>
     </div>
     <div class="footer">
       <my-footer></my-footer>
-      Gozh ©2018 Created by Muse-UI VueJS
+      Gozh ©2018 Created by Muse-UI and VueJS
     </div>
   </div>
 </template>
@@ -53,6 +53,11 @@
         activeTabR: 'tab4',
       }
     },
+    computed: {
+      isEdit() {
+        return this.$store.getters.isEditP
+      }
+    },
     methods: {
       handleTabChange(val) {
         this.activeTab = val
@@ -69,11 +74,9 @@
   .body-content {
     margin-left: 10px;
   }
-
   .layout {
     background-color: rgb(236, 236, 236);
   }
-
   .content {
     max-width: 1300px;
   }

@@ -11,6 +11,7 @@ import (
 	"os/signal"
 	"runtime"
 	"time"
+	"github.com/orange-jacky/gozh/auth"
 )
 
 func init() {
@@ -45,8 +46,9 @@ func main() {
 	router.Use(util.Logger())
 	//router.Static("/static", "./static") //载入js,css,img等静态资源
 	//router.LoadHTMLGlob("view/*.html")   //载入html模板
-
 	conf := util.GetConfigure()
+	// use CORS middleware
+	router.Use(auth.CORS(conf.WhiteList))
 	g := conf.Gin
 	server := fmt.Sprintf(":%v", g.Port)
 

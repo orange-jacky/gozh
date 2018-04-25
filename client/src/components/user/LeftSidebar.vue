@@ -3,16 +3,16 @@
     <div v-if="is_edit" class="demo-menu-container">
       <mu-paper class="demo-menu" :zDepth="2" >
         <div class="modify_profile">
-          <mu-raised-button class="demo-raised-button" backgroundColor="#DB6862" label="个人资料" icon="view_list" fullWidth default/>
+          <mu-raised-button @click="editProfile" class="demo-raised-button" backgroundColor="#DB6862" label="个人资料" icon="view_list" fullWidth default/>
         </div>
         <div class="modify_profile">
-          <mu-raised-button class="demo-raised-button" label="修改头像" icon="account_circle" fullWidth default/>
+          <mu-raised-button @click="editAvatar" class="demo-raised-button" label="修改头像" icon="account_circle" fullWidth default/>
         </div>
         <div class="modify_profile">
           <mu-raised-button class="demo-raised-button" label="消息通知" icon="notifications" fullWidth default/>
         </div>
         <div class="modify_profile">
-          <mu-raised-button class="demo-raised-button" label="修改密码" icon="lock_outline" fullWidth default/>
+          <mu-raised-button @click="changePassword" class="demo-raised-button" label="修改密码" icon="lock_outline" fullWidth default/>
         </div>
       </mu-paper>
     </div>
@@ -56,7 +56,7 @@
             </mu-col>
           </mu-row>
           <div class="profile">
-            <mu-raised-button icon="edit" class="profile-button profile-button-follow" label="编辑资料" fullWidth/>
+            <mu-raised-button icon="edit" @click="profile" class="profile-button profile-button-follow" label="编辑资料" fullWidth/>
           </div>
         </div>
       </mu-paper>
@@ -102,7 +102,26 @@
         MuRow},
       name: "left-sidebar",
       props: ['is_edit'],
-      activeColor: '#DB6862'
+      data() {
+        return {
+          activeColor: '#DB6862',
+        }
+      },
+      methods: {
+        profile () {
+          this.$store.commit('changeLeftSideBar',true)
+          this.$router.push('/user/profile/sada')
+        },
+        editProfile () {
+          this.$router.push('/user/profile/sada')
+        },
+        editAvatar () {
+          this.$router.push('/user/edit_avatar/sada')
+        },
+        changePassword () {
+          this.$router.push('/user/edit_avatar/sada')
+        }
+      }
     }
 </script>
 

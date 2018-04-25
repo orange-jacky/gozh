@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 // 引入字体图标
 import fontawesome from '@fortawesome/fontawesome'
 import '@fortawesome/fontawesome/styles.css';
@@ -28,13 +29,17 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-carbon.min.css'
+import store from './store/store'
 Vue.use(MuseUI)
 Vue.config.productionTip = false
+
+Vue.prototype.axios = axios
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -67,7 +67,7 @@
         // 第一步.将图片上传到服务器.
         var formdata = new FormData();
         formdata.append('image', $file);
-        axios({
+        this.axios({
           url: '/upload',
           method: 'post',
           data: formdata,

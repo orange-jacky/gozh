@@ -48,6 +48,7 @@ type Collections_names struct {
 	Ariticle string `json:"ariticle"`
 }
 
+
 //configure
 type configure struct {
 	Gin               Gin               `json:"gin"`
@@ -56,6 +57,7 @@ type configure struct {
 	Mongo             Mongo             `json:"mongo"`
 	Pic_addr          Pic_addr          `json:"pic_addr"`
 	Collections_names Collections_names `json:"collections_names"`
+	WhiteList	map[string]bool 		`json:"white_list"`
 }
 
 var (

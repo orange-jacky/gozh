@@ -42,10 +42,17 @@
 
 <script>
   import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
-
   export default {
     name: "profile",
-    components: {FontAwesomeIcon}
+    data() {
+      return {
+        gander: ''
+      }
+    },
+    components: {FontAwesomeIcon},
+    methods: {
+
+    }
   }
 </script>
 
