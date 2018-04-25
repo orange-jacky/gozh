@@ -1,6 +1,6 @@
 <template>
   <div class="courses-bg">
-    <nav-bar></nav-bar>
+    <nav-bar :active-tab="activeTab"></nav-bar>
     <div>
       <div class="courses-title">Golang中文教程</div>
       <br/>
@@ -38,7 +38,9 @@
       NavBar
     },
     data() {
+
       return {
+        activeTab: 'tab4',
         items: [
           {
             image: "https://www.baidu.com",

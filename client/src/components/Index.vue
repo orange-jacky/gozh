@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <nav-bar></nav-bar>
+    <nav-bar :active-tab="activeTab"></nav-bar>
         <!--导航-->
     <div class="content">
 
@@ -49,6 +49,7 @@ export default {
   },
   data () {
     return {
+      activeTab: 'tab1',
       activeTabA: 't1',
       activeTabR: 'tab4',
     }

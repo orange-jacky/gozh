@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <nav-bar></nav-bar>
+    <nav-bar :active-tab="activeTab"></nav-bar>
     <!--导航-->
     <div class="content">
 
@@ -17,7 +17,7 @@
       <mu-row class="body-content" gutter>
         <!--notify start-->
         <mu-col width="100" tablet="100" desktop="100">
-          <mu-chip class="notify"  @delete="handleClose" showDelete>
+          <mu-chip class="notify" @delete="handleClose" showDelete>
             <span>未设置登录密码，请前往 <a href="">修改密码</a> 页面进行设置。设置后将可以在移动设备上使用邮箱登录网站。</span>
           </mu-chip>
         </mu-col>
@@ -38,6 +38,7 @@
   import MyFooter from '../Footer'
   import NavBar from '../Navber'
   import LeftSidebar from './LeftSidebar'
+
   export default {
     name: 'index',
     components: {
@@ -45,18 +46,18 @@
       NavBar,
       MyFooter
     },
-    data () {
+    data() {
       return {
-        activeTabA: 't1',
         activeTab: 'tab1',
+        activeTabA: 't1',
         activeTabR: 'tab4',
       }
     },
     methods: {
-      handleTabChange (val) {
+      handleTabChange(val) {
         this.activeTab = val
       },
-      handleClose (){
+      handleClose() {
 
       }
     }
@@ -69,25 +70,30 @@
     margin-left: 10px;
   }
 
-  .layout{
+  .layout {
     background-color: rgb(236, 236, 236);
   }
-  .content{
+
+  .content {
     max-width: 1300px;
   }
-  .tab{
+
+  .tab {
     margin: 0 auto;
     width: 300px;
     background-color: rgba(0, 0, 0, 0);
   }
-  .content{
+
+  .content {
     width: 90%;
     margin: 0 auto;
   }
-  .breadcrumb{
+
+  .breadcrumb {
     margin: 10px 0;
   }
-  .footer{
+
+  .footer {
     padding: 20px 0;
     text-align: center;
   }
