@@ -13,12 +13,12 @@ const store = new  Vuex.Store({
     }
   },
   mutations: {
-
-  },
-  actions: {
     changeLeftSideBar (state, payload) {
       state.isEditProfile = payload
     },
+  },
+  actions: {
+
   }
 })
 

@@ -36,7 +36,8 @@
       publish() {
         this.$router.push('create')
       }
-    }
+    },
+
   }
 
 </script>

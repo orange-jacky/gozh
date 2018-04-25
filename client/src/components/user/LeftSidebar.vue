@@ -119,9 +119,9 @@
           this.$router.push('/user/edit_avatar/sada')
         },
         changePassword () {
-          this.$router.push('/user/edit_avatar/sada')
+          this.$router.push('/user/change_password/sada')
         }
-      }
+      },
     }
 </script>
 
