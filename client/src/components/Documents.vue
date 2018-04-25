@@ -77,6 +77,21 @@
       window.onresize = SetItemsHeight;
     }
   }
+
+  function SetItemsHeight() {
+    // console.log(document.getElementsByClassName("content")[0].clientHeight);
+    var contents = document.getElementsByClassName("content");
+    var items_ = document.getElementsByClassName("courses-item");
+    // console.log("items:"+items_);
+    var size  = contents.length;
+    // alert("size:" + size);
+    for(var i = 0; i < size; i = i+1) {
+      var contentHeight = contents[i].clientHeight;
+      // console.log(contentHeight);
+      // console.log(items_[i]);
+      items_[i].style.height =  contentHeight * (1 + 0.4) + "px";
+    }
+  }
 </script>
 
 <style scoped>
