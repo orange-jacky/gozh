@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <nav-bar></nav-bar>
+    <nav-bar :active-tab="activeTab"></nav-bar>
     <div class="container">
       <mu-row gutter>
         <mu-col width="100" tablet="100" desktop="100">
@@ -49,7 +49,8 @@
     data() {
       return {
         value: '1',
-        input: ''
+        input: '',
+        activeTab:'tab1',
       }
     },
     components: {
